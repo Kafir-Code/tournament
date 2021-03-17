@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+  <div id="nDiv">
+  <form action="" method="post" target="_self">
+    First name: <input type="text" id="fname" name="fname" value="Donald"><br>
+    Middle name: <input type="text" id="mname" name="mname" value="R."><br>
+    Last name: <input type="text" id="lname" name="lname" value="Duck"><br>
+  </form>
+
+    <script type='text/javascript'>
+    var nForm = document.createElement("FORM");
+    nForm.setAttribute("id", "myForm");
+    nDiv.appendChild(nForm);
+    for (i=0;i<4;i++){
+        var input = document.createElement("input");
+        input.type = "text";
+        input.name = "member" + i;
+        input.id = "member" + i;
+        input.placeholder = "insert player name";
+        nForm.appendChild(input);
+        nForm.appendChild(document.createElement("br"));
+    }
+    </script>
+
+  <button id="submit">Submit</button>
+
+  <script type='text/javascript'>
+  document.getElementById( 'submit' ).addEventListener( 'click', function () {
+      console.log(document.getElementById("fname").value);
+      console.log(document.getElementById("mname").value);
+      console.log(document.getElementById("lname").value);
+      console.log(document.getElementById("member0").value);
+      console.log(document.getElementById("member1").value);
+      console.log(document.getElementById("member2").value);
+      console.log(document.getElementById("member3").value);
+} );
+  </script>
+</div>
+</body>
+</html>

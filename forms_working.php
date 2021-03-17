@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+  <div id="nDiv">
+  <form action="" method="post" id="myForm" name="myForm" target="_self">
+    <script type='text/javascript'>
+    var member_number = 0;
+
+    for (i=0;i<4;i++){
+        var input = document.createElement("input");
+        input.type = "text";
+        input.name = "member" + member_number;
+        input.id = "member" + member_number;
+        input.placeholder = "insert player name";
+        myForm.appendChild(input);
+        myForm.appendChild(document.createElement("br"));
+        member_number++;
+    }
+    </script>
+    <br />
+    <input type="submit" id="submit" name="submit" value="Submit">
+    </form>
+    <br />
+    <?php
+    $x = 0;
+    //$y = "<script>document.write(member_number);</script>";
+      if(isset($_POST["submit"])) {
+        while($x <= 3){
+          $muuttuja = "member" . $x;
+          $php_var = $_POST[$muuttuja];
+          echo "Tämä on PHP-muuttuja sisältö: " . $php_var;
+          echo "<br />";
+          echo "Kentän tunniste: " . $muuttuja;
+          echo "<br /><br />";
+          $x++;
+        }
+     }
+    ?>
+</div>
+</body>
+</html>

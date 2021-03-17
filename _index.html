@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<head>
+    <script type='text/javascript'>
+        function addGroup(){
+          // Create anchor element.
+          var a = document.createElement("div");
+          a.setAttribute("id", "divAddGroup");
+
+          // Create an input element for emailID
+          var ID = document.createElement("input");
+          ID.setAttribute("type", "text");
+          ID.setAttribute("name", "member");
+          ID.setAttribute("id", "member");
+          ID.setAttribute("placeholder", "Number of players");
+
+          a.append(ID);
+
+          //document.body.appendChild(a);
+          groupField.appendChild(a);
+
+          var btn = document.createElement("BUTTON");
+          btn.innerHTML = "Add players";
+          btn.setAttribute("id", "BUTTON");
+          //document.body.appendChild(btn);
+          groupField.appendChild(btn);
+          document.getElementById("BUTTON").onclick = addFields;
+
+        }
+
+        function addFields(){
+            // Number of inputs to create
+            var number = document.getElementById("member").value;
+            // Container <div> where dynamic content will be placed
+            var container = document.getElementById("container");
+            // Clear previous contents of the container
+            while (container.hasChildNodes()) {
+                container.removeChild(container.lastChild);
+            }
+            for (i=0;i<number;i++){
+                // Append a node with a random text
+                container.appendChild(document.createTextNode("Player  " + (i+1) + " "));
+                // Create an <input> element, set its type and name attributes
+                var input = document.createElement("input");
+                input.type = "text";
+                input.name = "member" + i;
+                container.appendChild(input);
+                //container.appendChild(document.createTextNode(" " + input.name));
+                // Append a line break
+                container.appendChild(document.createElement("br"));
+            }
+        }
+    </script>
+</head>
+<body>
+  <div id=groupField>
+    <button onClick="addGroup()">
+      Add Group
+    </button>
+  </div>
+  <br /><br />
+<!--
+    <input type="text" id="member" name="member" value=""> Number of Players: <br />
+    <a href="#" id="filldetails" onclick="addFields()">Fill Details</a><br /><br />
+  -->
+    <div id="container"/>
+</body>
+</html>

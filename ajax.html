@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+</head>
+<html>
+<body>
+
+<div id="foo">
+<h2>The XMLHttpRequest Object</h2>
+<button type="button" onclick="changeContent()">Change Content</button>
+</div>
+<div id="bar">
+  <p id="p_content"></p>
+</div>
+
+<script>
+function changeContent() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("p_content").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "content.txt", true);
+  xhttp.send();
+}
+</script>
+
+</body>
+</html>
