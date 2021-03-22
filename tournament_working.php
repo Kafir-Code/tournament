@@ -37,7 +37,7 @@
     </div>
     <br />
     <input type="submit" id="submit" name="submit" value="Submit">
-    </form>
+  </form>
     <?php
     $query = $result = "";
     if(isset($_POST["submit"])) {
