@@ -32,6 +32,7 @@
   Match result page where one can update all match results.
 
   <?php
+    error_reporting(E_ALL & ~E_NOTICE);
     $t_id = $_GET['id'];
     $group_letter = 'A';
     $groups_number = 0;
@@ -104,7 +105,7 @@
   <?php
   if(isset($_POST["submit"])) {
     $x = 0;
-    while($x <= $matches && isset($_POST["form_mgHome".$x])) {
+  while($x <= $matches) {
       $form_mid = $_REQUEST["hid_mid".$x];
       $form_mghome = $_POST["form_mgHome".$x];
       $form_mgaway = $_POST["form_mgAway".$x];
