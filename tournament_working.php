@@ -11,7 +11,6 @@
   <script type='text/javascript'>
   function myFunction() {
     var checkBox = document.getElementById("myCheck");
-    var text = document.getElementById("text");
     if (checkBox.checked == true){
       divPoints.style.display = "block";
     } else {

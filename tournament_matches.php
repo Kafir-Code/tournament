@@ -2,11 +2,6 @@
 <html>
 <head>
 <style>
-  #divPoints {
-    margin-left: 20px;
-    margin-top: 20px;
-    display: none;
-  }
   input[type=text] {
     width: 25px;
     text-align: center;
