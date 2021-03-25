@@ -82,14 +82,17 @@
       $match_count++;
       }
     }
+  ?>
+  </table>
+  <br />
+  <input type="submit" id="submit" name="submit" value="Update group score(s)">
+  <?php
     } else {
         echo "No matches available";
       }
     $matches = $match_count;
   ?>
-</table>
-<br />
-<input type="submit" id="submit" name="submit" value="Update group score(s)">
+<!--<input type="submit" id="submit" name="submit" value="Update group score(s)">-->
 </form>
   <?php
     $group_letter++;
